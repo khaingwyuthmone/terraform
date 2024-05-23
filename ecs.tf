@@ -22,7 +22,7 @@ resource "aws_ecs_service" "my-service" {
   name            = "my-service"
   cluster         = aws_ecs_cluster.hellocloud-cluster.id
   task_definition = aws_ecs_task_definition.service.arn
-  desired_count   = 1
+  desired_count   = 2
   launch_type     = "FARGATE"
   network_configuration {
     subnets         = [aws_subnet.dev-public-subnet.id]
